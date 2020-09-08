@@ -26,7 +26,7 @@ censusDict = {}
 
 for row in csvRef:
     #print(row)
-    if csvRef.line_num <= 3:
+    if csvRef.line_num <= 2:
         continue
     censusDict[row[0]] = [row[0],row[1],row[2],row[6],row[8],row[10],row[12],row[14],row[16],row[18],row[24]]
     #print(row)
