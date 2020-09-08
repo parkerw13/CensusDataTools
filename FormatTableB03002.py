@@ -8,8 +8,8 @@ def writeToCSV(data):
         w.writerow(i)
         
 
-csvFile = r"C:\Users\William\Desktop\CensusData\RaceHispanic\ACS_5YR_Hispanic_AlamedaCounty\ACSDT5Y2018.B03002_data_with_overlays_2020-08-31T161649_TEST.csv"
-newCSV = r"C:\Users\William\Desktop\CensusData\RaceHispanic\ACS_5YR_Hispanic_AlamedaCounty\ACSDT5Y2018.B03002_data_with_overlays_2020-08-31T161649_NEW.csv"
+csvFile = input("Enter raw Census CSV File (no quotes):")
+newCSV = input("Enter output Census CSV File (no quotes:")
 
 headers = "geoid","geo_name","total_pop","white","black","am_indian_nat_alaska","asian","nat_hawaiian_pac_island","some_other","two_or_more","hispanic_latino"
 
