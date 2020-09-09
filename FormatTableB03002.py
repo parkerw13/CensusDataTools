@@ -26,7 +26,7 @@ censusDict = {}
 
 for row in csvRef:
     #print(row)
-    if csvRef.line_num <= 3:
+    if csvRef.line_num <= 2:
         continue
     geoJoin = row[0][9:]
     totMinority = int(row[8])+int(row[10])+int(row[12])+int(row[14])+int(row[16])+int(row[18])+int(row[24])
