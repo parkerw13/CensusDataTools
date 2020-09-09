@@ -2,9 +2,15 @@
 
 The tools here will allow people to take specific census data tables and extract specific columns with new headers for other use.
 
-First step will be creating a new csv from the raw census csv. The new csv will be formatted with headers that are appropriate for input into
-PostgresSQL/PostGIS. These are first writen as python tools to be run in IDLE with the user selecting the input and output files manually. Updates will
-include a GUI for the user.
+FormatTableB03002 will take the raw census table B03022 table and update the column headers and extract out just the raw counts for
+total population, white, black, american indian/native alaskan, asian, native hawaiian/pacific islander, some other race, 2 or more races, hispanic/latino.
+It then calculates the total minority population (minority is considered all the non-white population) and then the percent minority in each census geography
 
-The next step is creating instructions and SQL that will import the csv into PostgresSQL.
-Along with another tool that will do the same process and join the data to an existing shapefile. 
+The PostGIS_CreateTableForRace.sql is an sql query that can be run in the PostGIS query window of PgAdmin to create a new table with the same headers as the formatted census csv. The table name and schema should be set to one that is in your database.
+A manual import of the formatted census csv is run in PgAdmin 4 to import thte formatted table to the empty table just created.
+
+The JoinRaceData_AlamedaCountySample.sql is a sql query that can be run in the PostGIS query window of PgAdmin to join the newly created census csv to the census shapefile (must already be loaded into your PostGIS database) and save it as a new table. This table can be viewed in a GIS viewer such as QGIS.
+
+
+Next steps are to create a single query that will create the table, import the csv, join it, and create new table. With the only thing that needs to be changed is schema and name of tables.
+
