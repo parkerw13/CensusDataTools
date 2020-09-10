@@ -88,6 +88,7 @@ for row in csvRef:
         prctHispLat = -999
         prctMinority = -999
         prctMinority = -999
+        prctMaj = -999
         majPop = "None, no population"
     
     # Add each geography to the empty dictionary with the list that has the geo id, geography name, geo id for join, and population and percentage data.
